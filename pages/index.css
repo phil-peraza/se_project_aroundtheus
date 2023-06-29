@@ -23,6 +23,11 @@
 
 .header {
     margin-top: 45px;
+    box-shadow: 0 1px 1px #545454;
+}
+
+.header__logo {
+    margin-bottom: 41px;
 }
 
 .profile {
@@ -37,6 +42,7 @@
         "title button"
         "description description";
     grid-template-columns: minmax(auto, 373px) auto;
+    align-items: center;
     grid-gap: 8px 18px;
 }
 
@@ -55,12 +61,22 @@
     grid-area: button;
 }
 
+.profile__edit-button:hover {
+    opacity: 50%;
+    cursor: pointer;
+}
+
 .profile__add-button {
     background: transparent url(../images/add-icon.svg) center no-repeat;
     height: 50px;
     width: 150px;
     margin-left: auto;
     border-width: 2px;
+}
+
+.profile__add-button:hover {
+    opacity: 50%;
+    cursor: pointer;
 }
 
 .profile__description {
@@ -81,18 +97,73 @@
 }
 
 .cards {
-    
+    margin-top: 51px;
 }
 
 .card__list {
     display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 282px);
+    grid-gap: 20px 17px;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    
 }
 
 .card__image {
     height: 282px;
     width: 282px;
+    border-radius: 10px 10px 0 0;
 }
 
 .card__description {
     display: flex;
+    background-color: #fff;
+    color: #000; 
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 10px 10px;
+    
+}
+
+.card__title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.card__like-button {
+    background: transparent url(../images/like-inactive.svg) center no-repeat;
+    height: 18px;
+    width: 21px;
+    border: none;
+}   
+
+.card__like-button:hover {
+    background: transparent url(../images/like-active.svg) center no-repeat;
+    cursor: pointer;
+}
+
+.footer {
+    color: #545454;
+}
+
+.footer__copywrite {
+    font-size: 18px;
+    margin-top: 67px;
+    margin-bottom: 60px;
 }
