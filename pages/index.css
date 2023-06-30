@@ -59,6 +59,7 @@
     height: 24px;
     width: 24px;
     grid-area: button;
+    border: 2px;
 }
 
 .profile__edit-button:hover {
@@ -71,7 +72,7 @@
     height: 50px;
     width: 150px;
     margin-left: auto;
-    border-width: 2px;
+    border: 2px;
 }
 
 .profile__add-button:hover {
