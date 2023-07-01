@@ -168,3 +168,29 @@
     margin-top: 67px;
     margin-bottom: 60px;
 }
+
+@media screen and (max-width: 480px) {
+    .profile {
+        background-color: pink;
+        flex-direction: column;
+    }
+
+    .profile__info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-top: 27px;
+        margin-bottom: 36px;
+    }
+
+    .profile__description {
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile__add-button {
+        margin: 0;
+        width: 100%;
+    }
+}
