@@ -72,12 +72,13 @@
     height: 50px;
     width: 150px;
     margin-left: auto;
-    border: 2px;
+    border-color: #FFF;
 }
 
 .profile__add-button:hover {
     opacity: 50%;
     cursor: pointer;
+    width: 150px;
 }
 
 .profile__description {
@@ -170,9 +171,17 @@
 }
 
 @media screen and (max-width: 480px) {
+    .header__logo {
+        margin-left: 27px;
+    }
+
     .profile {
         background-color: pink;
         flex-direction: column;
+    }
+
+    .profile__image {
+        margin: 0;
     }
 
     .profile__info {
@@ -185,13 +194,27 @@
     }
 
     .profile__description {
-        width: 100%;
-        text-align: center;
+       width: 80%;
+       display: flex;
+       justify-content: space-around;
+    }
+
+    .profile__title {
+        font-size: 22px;
     }
 
     .profile__add-button {
       margin: 0;
-      width: 100%;
+      width: 90%;
     }
+
+    .profile__add-button:hover {
+        width: 90%;
+    }
+
+    .footer__copywrite {
+        margin-left: 19px;
+    }
+
 
 }
