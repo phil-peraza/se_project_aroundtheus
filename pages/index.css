@@ -170,7 +170,7 @@
     margin-bottom: 60px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 700px) {
     .header__logo {
         margin-left: 27px;
     }
@@ -217,4 +217,27 @@
     }
 
 
+}
+
+@media screen and (min-width: 701px) and (max-width: 1080px) {
+    .header__logo {
+        margin-left: 27px;
+    }
+    
+    .profile {
+        background-color: greenyellow;
+        
+    }
+
+    .profile__title {
+    }
+
+    .footer__copywrite {
+        margin-left: 19px;
+    }
+}
+
+@media screen and (min-width: 1081px) and (max-width: 1500px) {
+    .profile {
+        background-color: aquamarine;
 }
