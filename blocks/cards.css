@@ -2,7 +2,7 @@
     margin-top: 51px;
 }
 
-.card__list {
+.cards__list {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 282px);
@@ -27,7 +27,7 @@
 .card__description {
     display: flex;
     background-color: #fff;
-    color: #000; 
+    color: #000;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 20px;
