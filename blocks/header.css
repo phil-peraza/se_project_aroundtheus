@@ -1,6 +1,6 @@
 .header {
     margin-top: 45px;
-    box-shadow: 0 1px #545454;
+    border-bottom: solid rgba(54, 54, 54, 0.7) 1px;
 }
 
 .header__logo {
