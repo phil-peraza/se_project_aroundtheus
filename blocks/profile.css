@@ -20,7 +20,7 @@
     font-weight: 500;
     grid-area: title;
     margin: 0;
-    text-overflow: "";
+    text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     max-width: 373px;
@@ -61,6 +61,10 @@
     font-weight: normal;
     grid-area: description;
     margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 373px;
 }
 
 .profile__image {
@@ -96,15 +100,12 @@
        display: flex;
        justify-content: space-around;
        font-size: 14px;
-       line-height: 16.94px;
+       line-height: 16.94px; 
     }
 
     .profile__title {
         font-size: 22px;
         line-height: 26.63px;
-        text-overflow: "";
-        white-space: nowrap;
-        overflow: hidden;
         max-width: 196px;
     }
 
