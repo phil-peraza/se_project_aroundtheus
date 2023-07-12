@@ -7,6 +7,7 @@ Project 3 is a responsive website design that scales depending on the screen res
 * HTML
 * CSS
 * Figma
+* Javascript
 
 ### Project Link
 https://phil-peraza.github.io/se_project_aroundtheus/
