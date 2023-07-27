@@ -6,10 +6,15 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 999;
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    visibility: hidden;
+}
+
+.modal_opened {
+    visibility: visible;
 }
 
 .modal__container {
@@ -30,7 +35,11 @@
     background-color: transparent;
     width: 40px;
     height: 40px;
+}
+
+.modal__close:hover {
     cursor: pointer;
+    opacity: 0.6;
 }
 
 .modal__heading {
@@ -94,7 +103,7 @@
         width: 26px;
         height: 26px;
         bottom: calc(100% + 14px);
-    left: calc(100% - 26px);
+        left: calc(100% - 26px);
     }
 
     .modal__heading {
