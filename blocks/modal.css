@@ -57,18 +57,18 @@
     flex-flow: column;
 }
 
-.modal__form-input {
+.modal__input {
     margin-bottom: 30px;
     padding: 0 0 13px 0;
     border: none;
     box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 
-.modal__form-input:last-of-type {
+.modal__input:last-of-type {
     margin-bottom: 48px;
 }
 
-.modal__form-input::placeholder {
+.modal__input::placeholder {
     color: #000;
     opacity: 1;
     font-size: 14px;
