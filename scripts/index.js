@@ -41,11 +41,16 @@ const addNewCardModal = document.querySelector("#profile-add-card-modal");
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditCloseButton = document.querySelector(".modal__close");
 const addNewCardButton = document.querySelector(".profile__add-button");
+const addNewCardCloseButton = document.querySelector("#add-card-close-button");
 
 
 // Functions
 function closePopup() {
     profileEditModal.classList.remove("modal__opened");
+}
+
+function closePopupAddCard() {
+    addNewCardModal.classList.remove("modal__opened_add_card");
 }
 
 function getCardData(cardData) {
@@ -79,7 +84,7 @@ profileEditForm.addEventListener('submit', handleProfileEditSubmit);
 addNewCardButton.addEventListener("click", () => {
     addNewCardModal.classList.add("modal__opened_add_card");
 })
-
+addNewCardCloseButton.addEventListener("click", closePopupAddCard);
 
 // Card Elements
 initialCards.forEach((cardData) => {
