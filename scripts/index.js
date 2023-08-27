@@ -25,16 +25,24 @@ link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/ar
 }
 ];
 
-// Elements
+const cardTemplate = document
+.querySelector("#card-template")
+.content.querySelector(".card");
+
+// Wrappers
+const cardsWrap = document.querySelector(".cards__list");
+const profileEditForm = document.querySelector(".modal__form");
 const profileEditModal = document.querySelector("#profile-edit-modal");
+const addNewCardModal = document.querySelector("#profile-add-card-modal");
+
+// Elements and DOM nodes
+
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector("#profile-description-input");
-const profileEditForm = profileEditModal.querySelector(".modal__form");
-const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
-const cardListEl = document.querySelector(".cards__list");
-const addNewCardModal = document.querySelector("#profile-add-card-modal");
+
+
 
 
 // Buttons
@@ -73,6 +81,12 @@ function handleProfileEditSubmit(e) {
     closePopup();
 }
 
+function handleProfileAddNewCardSubmit(e) {
+    e.preventDefault();
+    const cardElement = getCardData();
+    closePopupAddCard();
+}
+
 // Events Listenters
 profileEditButton.addEventListener("click", () => {
     profileTitleInput.value = profileTitle.textContent;
@@ -88,6 +102,5 @@ addNewCardCloseButton.addEventListener("click", closePopupAddCard);
 
 // Card Elements
 initialCards.forEach((cardData) => {
-    const cardElement = getCardData(cardData);
-    cardListEl.append(cardElement);
+    cardsWrap.prepend(getCardData(cardData));
 });
