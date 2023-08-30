@@ -43,6 +43,7 @@ const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector("#profile-description-input");
 const previewImageElement = document.querySelector(".modal__preview_image");
+const previewImageDescription = document.querySelector(".modal__preview_image-name");
 
 // Buttons and DOM nodes
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -80,6 +81,7 @@ function getCardData(cardData) {
 
     cardImageEl.addEventListener("click", () => {
         previewImageElement.src = cardImageEl.src;
+        previewImageDescription.textContent = cardTitleEl.textContent;
         previewImageModalWindow.classList.add("modal__preview_popup_opened");
     })
 
