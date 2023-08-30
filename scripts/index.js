@@ -35,18 +35,21 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const addNewCardModal = document.querySelector("#profile-add-card-modal");
 const addNewCardForm = addNewCardModal.querySelector(".modal__form");
+const previewImageModalWindow = document.querySelector(".modal__preview_popup");
 
 // Elements
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector("#profile-description-input");
+const previewImageElement = document.querySelector(".modal__preview_image");
 
 // Buttons and DOM nodes
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditCloseButton = document.querySelector(".modal__close");
 const addNewCardButton = document.querySelector(".profile__add-button");
 const addNewCardCloseButton = document.querySelector("#add-card-close-button");
+const previewImageCloseButton = document.querySelector("#popup-image-close-button");
 
 // Form Data
 const cardTitleInput = addNewCardForm.querySelector(".modal__input_type_title");
@@ -61,6 +64,10 @@ function closePopupAddCard() {
     addNewCardModal.classList.remove("modal__opened_add_card");
 }
 
+function closePopupImage() {
+    previewImageModalWindow.classList.remove("modal__preview_popup_opened");
+}
+
 function getCardData(cardData) {
     const cardElement = cardTemplate.cloneNode(true);
     const cardImageEl = cardElement.querySelector(".card__image");
@@ -71,8 +78,10 @@ function getCardData(cardData) {
     // add event listener
         // cardElement.remove();
 
-    // add click listener to cardImageElement
-        // openModal
+    cardImageEl.addEventListener("click", () => {
+        previewImageElement.src = cardImageEl.src;
+        previewImageModalWindow.classList.add("modal__preview_popup_opened");
+    })
 
         likeButton.addEventListener("click", () => {
         likeButton.classList.toggle("card__like_button_active");
@@ -119,6 +128,7 @@ addNewCardButton.addEventListener("click", () => {
 })
 addNewCardCloseButton.addEventListener("click", closePopupAddCard);
 addNewCardForm.addEventListener("submit", handleProfileAddNewCardSubmit);
+previewImageCloseButton.addEventListener("click", closePopupImage);
 
 // Card Elements
 initialCards.forEach((cardData) => renderCard(cardData, cardsWrap));

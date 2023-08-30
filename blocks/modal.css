@@ -21,6 +21,10 @@
     visibility: visible;
 }
 
+.modal__preview_popup_opened {
+    visibility: visible;
+}
+
 .modal__container {
     position: relative;
     background: #FFF;
@@ -96,6 +100,23 @@
     cursor: pointer;
     opacity: 0.8;
 }
+
+
+.modal__container_preview_popup {
+  background: transparent;
+  max-width: 75vw;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  display: flex;
+}
+
+.modal__preview_image {
+   max-width: 100%;
+   max-height: 100%;
+   object-fit: cover;
+}
+
 
 @media screen and (max-width: 600px) {
     .modal__container {
