@@ -35,15 +35,15 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const addNewCardModal = document.querySelector("#profile-add-card-modal");
 const addNewCardForm = addNewCardModal.querySelector(".modal__form");
-const previewImageModalWindow = document.querySelector(".modal__preview_popup");
+const previewImageModalWindow = document.querySelector(".modal__popup");
 
 // Elements
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector("#profile-description-input");
-const previewImageElement = document.querySelector(".modal__preview_image");
-const previewImageDescription = document.querySelector(".modal__preview_image-name");
+const previewImageElement = document.querySelector(".modal__popup_image");
+const previewImageDescription = document.querySelector(".modal__popup_image-name");
 
 // Buttons and DOM nodes
 const profileEditButton = document.querySelector("#profile-edit-button");
