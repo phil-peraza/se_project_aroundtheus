@@ -43,7 +43,7 @@ const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector("#profile-description-input");
 const previewImageElement = document.querySelector(".modal__image_popup");
-const previewImageDescription = document.querySelector(".modal__image_popup_name");
+const previewImageDescription = document.querySelector(".modal__name_popup");
 
 // Buttons and DOM nodes
 const profileEditButton = document.querySelector("#profile-edit-button");
