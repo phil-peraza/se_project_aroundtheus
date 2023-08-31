@@ -74,10 +74,11 @@ function getCardData(cardData) {
     const cardImageEl = cardElement.querySelector(".card__image");
     const cardTitleEl = cardElement.querySelector(".card__title");
     const likeButton = cardElement.querySelector(".card__like_button");
-    // find delete button
+    const deleteButton = cardElement.querySelector(".card__delete_button");
 
-    // add event listener
-        // cardElement.remove();
+    deleteButton.addEventListener("click", () => {
+        cardElement.remove();
+    })
 
     cardImageEl.addEventListener("click", () => {
         previewImageElement.src = cardImageEl.src;
