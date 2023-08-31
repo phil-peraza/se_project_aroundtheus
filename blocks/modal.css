@@ -127,7 +127,7 @@
    object-fit: cover;
 }
 
-.modal__image_popup-name {
+.modal__image_popup_name {
     position: absolute;
     top: calc(100% + 10px);
     margin: 0;
