@@ -113,6 +113,7 @@ function handleProfileAddNewCardSubmit(e) {
     const name = cardTitleInput.value;
     const link = cardUrlInput.value;
     renderCard({name, link}, cardsWrap);
+    e.target.reset();
     closeModal(addNewCardModal);
 }
 
