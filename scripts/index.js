@@ -50,19 +50,27 @@ const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditCloseButton = document.querySelector(".modal__close");
 const addNewCardButton = document.querySelector(".profile__add-button");
 const addNewCardCloseButton = document.querySelector("#add-card-close-button");
-const previewImageCloseButton = document.querySelector("#popup-image-close-button");
+const previewImageCloseButton = document.querySelector(".modal__close");
 
 // Form Data
 const cardTitleInput = addNewCardForm.querySelector(".modal__input_type_title");
 const cardUrlInput = addNewCardForm.querySelector(".modal__input_type_url");
 
 // Functions
+function openPopup(popup) {
+    popup.classList.add("modal_opened");
+}
+
+function closePopup(popup) {
+    popup.classList.remove("modal_opened");
+}
+
 function closePopup() {
-    profileEditModal.classList.remove("modal__opened");
+    profileEditModal.classList.remove("modal_opened");
 }
 
 function closePopupAddCard() {
-    addNewCardModal.classList.remove("modal__opened_add_card");
+    addNewCardModal.classList.remove("modal_opened_add_card");
 }
 
 function closePopupImage() {
@@ -82,12 +90,13 @@ function getCardData(cardData) {
 
     cardImageEl.addEventListener("click", () => {
         previewImageElement.src = cardImageEl.src;
+        previewImageElement.alt = cardImageEl.alt;
         previewImageDescription.textContent = cardTitleEl.textContent;
-        previewImageModalWindow.classList.add("modal__preview_popup_opened");
+        previewImageModalWindow.classList.add("modal_opened");
     })
 
         likeButton.addEventListener("click", () => {
-        likeButton.classList.toggle("card__like_button_active");
+            likeButton.classList.toggle("card__like_button_active");
     })
 
     cardImageEl.src = cardData.link;
@@ -122,16 +131,16 @@ function handleProfileAddNewCardSubmit(e) {
 profileEditButton.addEventListener("click", () => {
     profileTitleInput.value = profileTitle.textContent;
     profileDescriptionInput.value = profileDescription.textContent;
-    profileEditModal.classList.add("modal__opened");
+    profileEditModal.classList.add("modal_opened");
 })
 profileEditCloseButton.addEventListener("click", closePopup);
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addNewCardButton.addEventListener("click", () => {
-    addNewCardModal.classList.add("modal__opened_add_card");
+    addNewCardModal.classList.add("modal_opened");
 })
-addNewCardCloseButton.addEventListener("click", closePopupAddCard);
+addNewCardCloseButton.addEventListener("click", closePopup);
 addNewCardForm.addEventListener("submit", handleProfileAddNewCardSubmit);
-previewImageCloseButton.addEventListener("click", closePopupImage);
+previewImageCloseButton.addEventListener("click", closePopup);
 
 // Card Elements
 initialCards.forEach((cardData) => renderCard(cardData, cardsWrap));
