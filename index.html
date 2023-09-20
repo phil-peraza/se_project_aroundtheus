@@ -44,13 +44,19 @@
                     name="title" 
                     class="modal__input"
                     id="profile-title-input" 
-                    placeholder="Name">
+                    placeholder="Name"
+                    minlength="2"
+                    maxlength="40"
+                    required
+                    />
+                    <span class="modal__error">Error message here</span>
                     <input 
                     type="text" 
                     name="description" 
                     class="modal__input" 
                     id="profile-description-input"
-                    placeholder="Description">
+                    placeholder="Description"
+                    />
                     <button class="modal__button">Save</button>
                 </form>
             </div>
@@ -66,12 +72,14 @@
                     type="text" 
                     name="name" 
                     class="modal__input modal__input_type_title"
-                    placeholder="Name">
+                    placeholder="Name"
+                    />
                     <input 
                     type="text" 
                     name="url"
                     class="modal__input modal__input_type_url"
-                    placeholder="Image URL">
+                    placeholder="Image URL"
+                    />
                     <button class="modal__button">Save</button>
                 </form>
             </div>

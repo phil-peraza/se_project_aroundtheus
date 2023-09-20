@@ -134,6 +134,11 @@
     font-size: 12px;
 }
 
+.modal__error_visible {
+    color: #F00;
+    font-size: 12px;
+}
+
 @media screen and (max-width: 600px) {
     .modal__container {
         width: 85%;
