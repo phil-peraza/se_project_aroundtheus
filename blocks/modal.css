@@ -80,9 +80,9 @@
     box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 
-.modal__input:last-of-type {
+/*.modal__input:last-of-type {
     margin-bottom: 48px;
-}
+}*/
 
 .modal__input::placeholder {
     color: #000;
@@ -102,6 +102,7 @@
     line-height: normal;
     padding-top: 14px;
     padding-bottom: 18px;
+    margin-top: 18px;
 }
 
 .modal__button:hover {
@@ -137,6 +138,13 @@
 .modal__error {
     color: #F00;
     font-size: 12px;
+    margin-bottom: 13px;
+}
+
+.modal__input_type_error {
+    width: 358px;
+    box-shadow: 0px 1px #F00;
+    margin-bottom: 5px;
 }
 
 @media screen and (max-width: 600px) {
