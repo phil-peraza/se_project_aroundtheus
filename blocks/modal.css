@@ -105,6 +105,14 @@
     margin-top: 18px;
 }
 
+.modal__button_disabled {
+    border-radius: 2px;
+    border: 1px solid #000;
+    opacity: 0.2;
+    background-color: #FFF;
+    color: #000;
+}
+
 .modal__button:hover {
     cursor: pointer;
     opacity: 0.8;
