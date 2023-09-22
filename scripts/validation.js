@@ -17,14 +17,25 @@ function hideInputError(formEl, inputEl, {inputErrorClass, errorClass}) {
 
 function checkInputValidity(formEl, inputEl, options) {
     if(!inputEl.validity.valid) {
-        showInputError(formEl, inputEl, options);
-    } else {
-        hideInputError(formEl, inputEl, options);
+        return showInputError(formEl, inputEl, options);
     }
+        hideInputError(formEl, inputEl, options);   
 }
 
-function toggleButtonState(inputEls, submitButton) {
+function toggleButtonState(inputEls, submitButton, {inactiveButtonClass}) {
+    let foundInvalid = false;
+    inputEls.forEach(inputEl => {
+        if(!inputEl.validity.valid) {
+            foundInvalid = true;
+        }
+    });
 
+        if(foundInvalid) {
+            submitButton.classList.add(inactiveButtonClass);
+            return submitButton.disabled = true;
+        } 
+            submitButton.classList.remove(inactiveButtonClass);
+            submitButton.disabled = false;    
 }
 
 function setEventListeners(formEl, options) {
@@ -35,7 +46,7 @@ function setEventListeners(formEl, options) {
     inputEls.forEach(inputEl => {
         inputEl.addEventListener("input", (e) => {
             checkInputValidity(formEl, inputEl, options);
-            toggleButtonState(inputEls, submitButton);
+            toggleButtonState(inputEls, submitButton, options);
         });
     });
 }
@@ -72,3 +83,4 @@ const config = {
   };
 
 enableValidation(config);
+
