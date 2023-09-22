@@ -1,8 +1,7 @@
 // enabling validation by calling enableValidation()
 // pass all the settings on call
 
-function showInputError() {
-
+function showInputError(formEl, inputEl, options) {
 }
 
 function checkInputValidity(formEl, inputEl, options) {
