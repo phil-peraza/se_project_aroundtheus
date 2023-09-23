@@ -57,7 +57,7 @@
                     id="profile-description-input"
                     placeholder="Description"
                     minlength="2"
-                    maxlength="40"
+                    maxlength="200"
                     required
                     />
                     <span class="modal__error" id="profile-description-input-error"></span>
@@ -74,22 +74,24 @@
                 <form class="modal__form" id="add_card_form">
                     <input 
                     type="text" 
-                    name="name" 
+                    name="card-name"
+                    id="card-name"
                     class="modal__input modal__input_type_title"
-                    placeholder="Name"
+                    placeholder="Title"
                     minlength="1"
                     maxlength="30"
                     required
                     />
-                    <span class="modal__error" id="profile-title-input-error"></span>
+                    <span class="modal__error" id="card-name-error"></span>
                     <input 
-                    type="text" 
-                    name="url"
+                    type="url"
+                    id="card-link"
+                    name="link"
                     class="modal__input modal__input_type_url"
                     placeholder="Image URL"
                     required
                     />
-                    <span class="modal__error" id="profile-description-input-error"></span>
+                    <span class="modal__error" id="card-link-error"></span>
                     <button class="modal__button modal__button_disabled">Save</button>
                 </form>
             </div>
