@@ -117,11 +117,17 @@ function handleProfileAddNewCardSubmit(e) {
     closeModal(addNewCardModal);
 }
 
-function escKeyHandler(evt) {
-    if (evt.key === "Escape") {
+function escKeyHandler(e) {
+    if(e.key === "Escape") {
         closeModal(profileEditModal);
         closeModal(addNewCardModal);
         closeModal(previewImageModalWindow);
+    }
+}
+
+function clickCloseHandler(e) {
+    if(e.target.contains(".modal_opened")){
+        document.classList.remove(".modal_opened")
     }
 }
 
@@ -141,6 +147,8 @@ addNewCardCloseButton.addEventListener("click", () => closeModal(addNewCardModal
 previewImageCloseButton.addEventListener("click", () => closeModal(previewImageModalWindow));
 
 document.addEventListener("keydown", escKeyHandler);
+
+document.addEventListener("click", clickCloseHandler);
 
 // Card Elements
 initialCards.forEach((cardData) => renderCard(cardData, cardsWrap));
