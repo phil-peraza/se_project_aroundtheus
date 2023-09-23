@@ -80,10 +80,6 @@
     box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 
-/*.modal__input:last-of-type {
-    margin-bottom: 48px;
-}*/
-
 .modal__input::placeholder {
     color: #000;
     opacity: 1;
