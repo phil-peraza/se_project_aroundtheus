@@ -143,12 +143,12 @@ previewImageCloseButton.addEventListener("click", () => closeModal(previewImageM
 
 document.addEventListener("keydown", escKeyHandler);
 
-document.addEventListener("click", function(e) {
-    if(!e.target.closest(".modal")) {
-        return e.target.closest(".modal")
-    } else {
-    modal.classList.remove("modal_opened")
-    }
+[profileEditModal, addNewCardModal, previewImageModalWindow].forEach(modal => {
+    modal.addEventListener("mousedown", (e) => {
+        if (e.target.classList.contains("modal")) {
+            closeModal(modal);
+        }
+    })
 });
 
 // Card Elements
