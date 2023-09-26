@@ -120,8 +120,8 @@ function handleProfileAddNewCardSubmit(e) {
 }
 
 function handleEsc(e) {
-    const openedModal = document.querySelector(".modal_opened")
     if(e.key === "Escape") {
+        const openedModal = document.querySelector(".modal_opened");
         closeModal(openedModal);
     }
 }
