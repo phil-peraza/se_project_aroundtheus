@@ -6,18 +6,25 @@ export default class Card {
     }
 
 _setEventListeners() {
-    /* ".card__like_button" */
+    // Like Button
     this._cardElement.querySelector(".card__like_button").addEventListener("click", () => {
         this._handleLikeIcon();
     });
     ;
-    /* ".card__delete_button" */
-    const deleteButton = this._cardElement.querySelector(".card__delete_button");
+    // Delete Card
+    this._cardElement.querySelector(".card__delete_button").addEventListener("click", () => {
+        this._handleDeleteCard();
+    });
     }
 
 _handleLikeIcon() {
-    this._cardElement.querySelector("card__like_button")
+    this._cardElement.querySelector(".card__like_button")
     .classList.toggle("card__like_button_active");
+}
+
+_handleDeleteCard() {
+    this._cardElement.remove();
+    this._cardElement = null;
 }
 
 getView() {
