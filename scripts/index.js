@@ -85,10 +85,6 @@ function getCardData(cardData) {
     const likeButton = cardElement.querySelector(".card__like_button");
     const deleteButton = cardElement.querySelector(".card__delete_button");
 
-    deleteButton.addEventListener("click", () => {
-        cardElement.remove();
-    })
-
     cardImageEl.addEventListener("click", () => {
         previewImageElement.src = cardImageEl.src;
         previewImageElement.alt = cardImageEl.alt;
@@ -96,9 +92,9 @@ function getCardData(cardData) {
         openModal(previewImageModalWindow);
     })
 
-        likeButton.addEventListener("click", () => {
-            likeButton.classList.toggle("card__like_button_active");
-    })
+    
+    likeButton.addEventListener("click", handleLikeIcon);
+    deleteButton.addEventListener("click", handleDeleteCard);
 
     cardImageEl.src = cardData.link;
     cardImageEl.alt = cardData.name;
@@ -134,7 +130,16 @@ function handleEsc(e) {
         const openedModal = document.querySelector(".modal_opened");
         closeModal(openedModal);
     }
+
 }
+
+const handleLikeIcon = (e) => {
+    e.target.classList.toggle("card__like_button_active");
+};
+
+const handleDeleteCard = (e) => {
+    e.target.closest(".card").remove();
+};
 
 // Events Listenters
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
