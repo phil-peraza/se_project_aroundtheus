@@ -79,9 +79,9 @@ const initialCards = [
     
     function handleProfileAddNewCardSubmit(e) {
         e.preventDefault();
-        const name = cardTitleInput.value;
-        const link = cardUrlInput.value;
-        renderCard({name, link}, cardsWrap);
+        const cardData = { name: cardTitleInput.value, link: cardUrlInput.value };
+        const cardElement = renderCard(cardData);
+        cardsWrap.prepend(cardElement);
         e.target.reset();
         closeModal(addNewCardModal);
     }
