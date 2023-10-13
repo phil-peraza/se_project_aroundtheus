@@ -30,7 +30,6 @@ const initialCards = [
  
     /* -------------------------------- Wrappers -------------------------------- */
     
-    const modal = document.querySelector(".modal");
     const cardsWrap = document.querySelector(".cards__list");
     const profileEditModal = document.querySelector("#profile-edit-modal");
     const profileEditForm = profileEditModal.querySelector(".modal__form");
