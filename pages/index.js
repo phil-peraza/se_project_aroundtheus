@@ -1,4 +1,5 @@
 import Card from "../components/Card.js"
+import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
     {
@@ -28,6 +29,7 @@ const initialCards = [
     ];
  
     /* -------------------------------- Wrappers -------------------------------- */
+    
     const modal = document.querySelector(".modal");
     const cardsWrap = document.querySelector(".cards__list");
     const profileEditModal = document.querySelector("#profile-edit-modal");
@@ -38,6 +40,7 @@ const initialCards = [
     /* const cardSelector = document.querySelector("#card-template"); */
     
     /* -------------------------------- Elements -------------------------------- */
+    
     const profileTitle = document.querySelector(".profile__title");
     const profileDescription = document.querySelector(".profile__description");
     const profileTitleInput = document.querySelector("#profile-title-input");
@@ -46,6 +49,7 @@ const initialCards = [
     const previewImageDescription = document.querySelector(".modal__name_popup");
     
     /* -------------------------- Buttons and DOM nodes ------------------------- */
+    
     const profileEditButton = document.querySelector(".profile__edit-button");
     const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
     const addNewCardButton = document.querySelector(".profile__add-button");
@@ -53,7 +57,8 @@ const initialCards = [
     const previewImageCloseButton = previewImageModalWindow.querySelector(".modal__close");
     
    /* -------------------------------- Form Data ------------------------------- */
-    const cardTitleInput = addNewCardForm.querySelector(".modal__input_type_title");
+    
+   const cardTitleInput = addNewCardForm.querySelector(".modal__input_type_title");
     const cardUrlInput = addNewCardForm.querySelector(".modal__input_type_url");
     
     /* -------------------------------- Functions ------------------------------- */
@@ -70,6 +75,7 @@ const initialCards = [
     
     
     /* ---------------------------- Event Handlers --------------------------- */
+    
     function handleProfileEditSubmit(e) {
         e.preventDefault();
         profileTitle.textContent = profileTitleInput.value;
@@ -101,6 +107,7 @@ const initialCards = [
     }
     
     /* ---------------------------- Events Listenters --------------------------- */
+    
     profileEditForm.addEventListener("submit", handleProfileEditSubmit);
     profileEditButton.addEventListener("click", () => {
         profileTitleInput.value = profileTitle.textContent;
@@ -122,9 +129,28 @@ const initialCards = [
             }
         })
     });
+
+    /* ------------------------------- Validation ------------------------------- */
     
+    const config = {
+        formSelector: ".modal__form",
+        inputSelector: ".modal__input",
+        submitButtonSelector: ".modal__button",
+        inactiveButtonClass: "modal__button_disabled",
+        inputErrorClass: "modal__input_type_error",
+        errorClass: "modal__error_visible"
+      };
+
+      const profileFormValidator = new FormValidator(config, profileEditForm);
+      profileFormValidator.enableValidation();
+
+
+      const addFormValidator = new FormValidator(config, addNewCardForm);
+      addFormValidator.enableValidation();
+
    /* ------------------------------ Card Elements ----------------------------- */
-    initialCards.forEach((data) => {
+    
+   initialCards.forEach((data) => {
         const cardElement = renderCard(data);
         cardsWrap.append(cardElement);
     });
