@@ -34,9 +34,8 @@ const initialCards = [
     const profileEditModal = document.querySelector("#profile-edit-modal");
     const profileEditForm = profileEditModal.querySelector(".modal__form");
     const addNewCardModal = document.querySelector("#profile-add-card-modal");
-    const addNewCardForm = addNewCardModal.querySelector(".modal__form");
+    const addNewCardForm = document.forms["add_card_form"];
     const previewImageModalWindow = document.querySelector("#popup-modal");
-    /* const cardSelector = document.querySelector("#card-template"); */
     
     /* -------------------------------- Elements -------------------------------- */
     
@@ -50,10 +49,8 @@ const initialCards = [
     /* -------------------------- Buttons and DOM nodes ------------------------- */
     
     const profileEditButton = document.querySelector(".profile__edit-button");
-    const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
     const addNewCardButton = document.querySelector(".profile__add-button");
-    const addNewCardCloseButton = addNewCardModal.querySelector(".modal__close");
-    const previewImageCloseButton = previewImageModalWindow.querySelector(".modal__close");
+    const popups = document.querySelectorAll(".modal");
     
    /* -------------------------------- Form Data ------------------------------- */
     
@@ -71,7 +68,6 @@ const initialCards = [
         modal.classList.remove("modal_opened");
         document.removeEventListener("keydown", handleEsc);
     }
-    
     
     /* ---------------------------- Event Handlers --------------------------- */
     
@@ -111,23 +107,24 @@ const initialCards = [
     profileEditButton.addEventListener("click", () => {
         profileTitleInput.value = profileTitle.textContent;
         profileDescriptionInput.value = profileDescription.textContent;
-        openModal(profileEditModal)
+        openModal(profileEditModal);
     });
-    profileEditCloseButton.addEventListener("click", () => closeModal(profileEditModal));
     
     addNewCardForm.addEventListener("submit", handleProfileAddNewCardSubmit);
-    addNewCardButton.addEventListener("click", () => openModal(addNewCardModal));
-    addNewCardCloseButton.addEventListener("click", () => closeModal(addNewCardModal));
+    addNewCardButton.addEventListener("click", () => {
+        openModal(addNewCardModal)
+    });
     
-    previewImageCloseButton.addEventListener("click", () => closeModal(previewImageModalWindow));
-    
-    [profileEditModal, addNewCardModal, previewImageModalWindow].forEach(modal => {
-        modal.addEventListener("mousedown", (e) => {
-            if (e.target.classList.contains("modal")) {
-                closeModal(modal);
+    popups.forEach((popup) => {
+        popup.addEventListener("mousedown", (e) => {
+            if (e.target.classList.contains("modal_opened")) {
+                closeModal(popup)
+            }
+            if (e.target.classList.contains("modal__close")) {
+                closeModal(popup)
             }
         })
-    });
+    })
 
     /* ------------------------------- Validation ------------------------------- */
     
@@ -140,12 +137,11 @@ const initialCards = [
         errorClass: "modal__error_visible"
       };
 
-      const profileFormValidator = new FormValidator(config, profileEditForm);
-      profileFormValidator.enableValidation();
+    const profileFormValidator = new FormValidator(config, profileEditForm); 
+    profileFormValidator.enableValidation(); 
 
-
-      const addFormValidator = new FormValidator(config, addNewCardForm);
-      addFormValidator.enableValidation();
+    const addFormValidator = new FormValidator(config, addNewCardForm); 
+    addFormValidator.enableValidation(); 
 
    /* ------------------------------ Card Elements ----------------------------- */
     
@@ -157,6 +153,7 @@ const initialCards = [
     function renderCard(data) {
         const card = new Card(data, "#card-template", (link, name) => {
             previewImageElement.src = link;
+            previewImageElement.alt = name;
             previewImageDescription.textContent = name;
             openModal(previewImageModalWindow);
         });
