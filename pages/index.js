@@ -83,8 +83,9 @@ const initialCards = [
         const cardData = { name: cardTitleInput.value, link: cardUrlInput.value };
         const cardElement = renderCard(cardData);
         cardsWrap.prepend(cardElement);
-        e.target.reset();
+        
         closeModal(addNewCardModal);
+        addNewCardForm.reset();
     }
     
     function handleEsc(e) {
@@ -94,13 +95,6 @@ const initialCards = [
         }
     }
 
-    function handlePreviewPicture(data) {
-        previewImageElement.src = data.link;
-        previewImageElement.alt = data.name;
-        previewImageDescription.textContent = data.name;
-        openModal(previewImageModalWindow);
-    }
-    
     /* ---------------------------- Events Listenters --------------------------- */
     
     profileEditForm.addEventListener("submit", handleProfileEditSubmit);
@@ -112,7 +106,7 @@ const initialCards = [
     
     addNewCardForm.addEventListener("submit", handleProfileAddNewCardSubmit);
     addNewCardButton.addEventListener("click", () => {
-        openModal(addNewCardModal)
+        openModal(addNewCardModal);
     });
     
     popups.forEach((popup) => {
@@ -124,7 +118,7 @@ const initialCards = [
                 closeModal(popup)
             }
         })
-    })
+    });
 
     /* ------------------------------- Validation ------------------------------- */
     
