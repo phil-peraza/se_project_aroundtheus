@@ -70,7 +70,7 @@ const initialCards = [
     }
     
     /* ---------------------------- Event Handlers --------------------------- */
-    
+
     function handleProfileEditSubmit(e) {
         e.preventDefault();
         profileTitle.textContent = profileTitleInput.value;
@@ -95,6 +95,7 @@ const initialCards = [
         }
     }
 
+
     /* ---------------------------- Events Listenters --------------------------- */
     
     profileEditForm.addEventListener("submit", handleProfileEditSubmit);
@@ -106,6 +107,7 @@ const initialCards = [
     
     addNewCardForm.addEventListener("submit", handleProfileAddNewCardSubmit);
     addNewCardButton.addEventListener("click", () => {
+        addFormValidator.toggleButtonState();
         openModal(addNewCardModal);
     });
     
