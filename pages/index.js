@@ -86,6 +86,7 @@ const initialCards = [
         
         closeModal(addNewCardModal);
         addNewCardForm.reset();
+        addFormValidator.toggleButtonState();
     }
     
     function handleEsc(e) {
@@ -107,7 +108,6 @@ const initialCards = [
     
     addNewCardForm.addEventListener("submit", handleProfileAddNewCardSubmit);
     addNewCardButton.addEventListener("click", () => {
-        addFormValidator.toggleButtonState();
         openModal(addNewCardModal);
     });
     
