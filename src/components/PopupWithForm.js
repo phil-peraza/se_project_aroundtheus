@@ -1,4 +1,4 @@
-/* import Popup from "./Popup.js";
+import Popup from "./Popup.js";
 
 class PopupWithForm extends Popup {
   constructor(popupSelector, handleFormSubmit) {
@@ -29,4 +29,4 @@ class PopupWithForm extends Popup {
     e.preventDefault();
     this._handleFormSubmit(this._getInputValues());
   };
-} */
+}
