@@ -1,4 +1,4 @@
-/* export const initialCards = [
+export const initialCards = [
     {
       name: "Yosemite Valley",
       link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
@@ -16,83 +16,53 @@
       link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
     },
     {
-      name: "Vanoice National Park",
+      name: "Vanoise National Park",
       link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
     },
     {
       name: "Lago di Braies",
       link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
     },
-  ]; */
+  ];
 
-/* -------------------------------------------------------------------------- */
-/*                                  Wrappers                                  */
-/* -------------------------------------------------------------------------- */
-e; /* xport const cardsWrap = document.querySelector(".cards__list");
-  export const profileEditPopup = document.querySelector("#profile-edit-popup");
-  export const addCardPopup = document.querySelector("#add-card-popup");
-  export const profileEditForm =
-    profileEditPopup.querySelector("#edit-profile-form");
-  export const addCardForm = addCardPopup.querySelector("#add-card-form");
-  export const viewCardImagePopup = document.querySelector("#view-image-popup"); */
+/* -------------------------------- Wrappers -------------------------------- */
 
-/* -------------------------------------------------------------------------- */
-/*                       // Buttons and other DOM nodes                       */
-/* -------------------------------------------------------------------------- */
-/*   export const profileEditButton = document.querySelector("#profile-edit-button");
-  export const profileCloseButton = profileEditPopup.querySelector(
-    "#editprofile-close-button"
-  );
-  export const profileTitle = document.querySelector(".profile__title");
-  export const profileDescription = document.querySelector(
-    ".profile__description"
-  );
-  export const cardListEl = document.querySelector(".cards__list");
-  export const addCardButton = document.querySelector("#add-button");
-  export const addCardCloseButton = addCardPopup.querySelector(
-    "#addcard-close-button"
-  );
-  export const addCardTitle = document.querySelector(".popup__title");
-  export const addCardImageLink = document.querySelector(".popup__image-link");
-  export const viewCardImage =
-    viewCardImagePopup.querySelector(".popup__image-view");
-  export const viewCardImageCaption = document.querySelector(
-    ".popup__image-caption"
-  );
-  export const viewCardCloseButton = viewCardImagePopup.querySelector(
-    "#viewimage-close-button"
-  ); */
+export const cardsWrap = document.querySelector(".cards__list");
+export const profileEditModal = document.querySelector("#profile-edit-modal");
+export const profileEditForm = profileEditModal.querySelector(".modal__form");
+export const addNewCardModal = document.querySelector("#profile-add-card-modal");
+export const addNewCardForm = document.forms["add_card_form"];
+export const previewImageModalWindow = document.querySelector("#popup-modal");
 
-/* -------------------------------------------------------------------------- */
-/*                                // Form Data                                */
-/* -------------------------------------------------------------------------- */
-/*  export const profileTitleInput = document.querySelector(
-    ".popup__input_type_name"
-  );
-  export const profileDescriptionInput = document.querySelector(
-    ".popup__input_type_description"
-  );
-  export const cardTitleInput = addCardForm.querySelector(
-    ".popup__input_type_title"
-  );
-  export const cardUrlInput = addCardForm.querySelector(".popup__input_type_url");
-  export const cardFormInputs = [cardTitleInput, cardUrlInput];
-  export const cardFormSubmitButton = addCardForm.querySelector(
-    ".popup__save-button"
-  );
-  
-  export const settings = {
-    formSelector: ".popup__form",
-    inputSelector: ".popup__input",
-    submitButtonSelector: ".popup__save-button",
-    inactiveButtonClass: "popup__save-button_disabled",
-    inputErrorClass: "popup__input_type_error",
-    errorClass: "popup__error_visible",
-  };
-  export const editForm = document.querySelector("#edit-profile-form");
-  export const addForm = document.querySelector("#add-card-form");
-  
-  export const cardsConfig = {
-    containerSelector: ".cards__list",
-    cardTemplateSelector: "#card-template",
-  }; */
+/* -------------------------- Buttons and DOM nodes ------------------------- */
+
+export const profileEditButton = document.querySelector(".profile__edit-button");
+export const addNewCardButton = document.querySelector(".profile__add-button");
+export const popups = document.querySelectorAll(".modal");
+
+/* -------------------------------- Elements -------------------------------- */
+
+export const profileTitle = document.querySelector(".profile__title");
+export const profileDescription = document.querySelector(".profile__description");
+export const profileTitleInput = document.querySelector("#profile-title-input");
+export const profileDescriptionInput = document.querySelector(
+  "#profile-description-input"
+);
+export const previewImageElement = document.querySelector(".modal__image_popup");
+export const previewImageDescription = document.querySelector(".modal__name_popup");
+
+/* -------------------------------- Form Data ------------------------------- */
+
+export const cardTitleInput = addNewCardForm.querySelector(".modal__input_type_title");
+export const cardUrlInput = addNewCardForm.querySelector(".modal__input_type_url");
+export const config = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+};
+
+export const editForm = document.querySelector("#edit-profile-form");
+export const addForm = document.querySelector("#add-card-form");
