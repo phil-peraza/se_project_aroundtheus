@@ -33,7 +33,10 @@ import {
 
 const newUserInfo = new UserInfo(".profile__title", ".profile__description");
 
-const addCardPopup = new PopupWithForm("#profile-add-card-modal", handleAddCardSubmit);
+const addCardPopup = new PopupWithForm(
+  "#profile-add-card-modal",
+  handleAddCardSubmit
+);
 addCardPopup.setEventListeners();
 
 const editProfilePopup = new PopupWithForm(
@@ -73,7 +76,6 @@ function handleAddCardSubmit(data) {
 
 function handleProfileEditSubmit(data) {
   newUserInfo.setUserInfo(data);
-  console.log(data);
   editProfilePopup.close();
 }
 
