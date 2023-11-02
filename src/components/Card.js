@@ -1,6 +1,8 @@
+import { cardData } from "../utils/constants";
+
 export default class Card {
   constructor(cardData, cardSelector, handleImageClick) {
-    this._title = cardData.title;
+    this._name = cardData.name;
     this._link = cardData.link;
     this._cardSelector = cardSelector;
     this._handleImageClick = handleImageClick;
@@ -19,9 +21,9 @@ export default class Card {
     this._cardElement = this._getTemplate();
     this._setEventListeners();
     const cardTitle = this._cardElement.querySelector(".card__title");
-    cardTitle.textContent = this._title;
+    cardTitle.textContent = this._name;
     this._cardImage.setAttribute("src", this._link);
-    this._cardImage.setAttribute("alt", this._title);
+    this._cardImage.setAttribute("alt", this._name);
     return this._cardElement;
   }
 
@@ -39,7 +41,7 @@ export default class Card {
 
     this._cardImage = this._cardElement.querySelector(".card__image");
     this._cardImage.addEventListener("click", () => {
-      this._handleImageClick(this._title, this._link);
+      this._handleImageClick(this._name, this._link);
     });
   }
 
