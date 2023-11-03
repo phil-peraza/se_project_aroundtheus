@@ -1,5 +1,3 @@
-import { cardData } from "../utils/constants";
-
 export default class Card {
   constructor(cardData, cardSelector, handleImageClick) {
     this._name = cardData.name;
