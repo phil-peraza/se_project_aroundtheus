@@ -2,135 +2,213 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      content="width=device-width, user-scalable=no, initial-scale=1.0"
-      name="viewport"
-    />
-    <title>Around the U.S.</title>
-    <link href="favicon.ico" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Phil Peraza" />
+    <title>Around The U.S.</title>
+    <link rel="icon" href="favicon.ico" />
   </head>
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
         <img
-          src="<%=require('./images/logo.svg')%>"
-          alt="Around the U.S. logo"
           class="header__logo"
+          src="<%=require('./images/logo.svg')%>"
+          alt="Around The U.S. logo"
         />
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="<%=require('./images/jacques-cousteau.png')%>"
-            alt="Avatar"
-            class="profile__image"
-          />
-          <div class="profile__info">
-            <h1 class="profile__title">Jacques Cousteau</h1>
+          <div class="profile__avatar-container">
+            <img class="profile__image" src="" alt="Avatar" />
             <button
-              class="profile__edit-button"
-              id="profile-edit-button"
+              class="avatar__edit-button"
+              id="avatar-edit-button"
               type="button"
             ></button>
-            <p class="profile__description">Explorer</p>
           </div>
-          <button class="profile__add-button" type="button"></button>
+          <div class="profile__info">
+            <h1 class="profile__title"></h1>
+            <button
+              class="profile__edit-button"
+              id="edit-profile-open-button"
+              type="button"
+            ></button>
+            <p class="profile__description"></p>
+          </div>
+          <button
+            class="profile__add-button"
+            id="add-card-open-button"
+            type="button"
+          ></button>
         </section>
-
         <section class="cards page__section">
           <ul class="cards__list"></ul>
         </section>
-
-        <footer class="footer page__section">
-          <p class="footer__copywrite">&copy; Around the U.S.</p>
-        </footer>
       </main>
+      <footer class="footer page__section">
+        <p class="footer__copyright">&copy; 2023 Around The U.S.</p>
+      </footer>
     </div>
 
-    <!-- Edit Modal -->
+    <!-- Edit profile modal -->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close" id="profile-close-modal-button"></button>
-        <p class="modal__heading">Edit Profile</p>
-        <form class="modal__form" id="profile-edit-form">
+        <button
+          class="modal__close"
+          id="edit-profile-close-button"
+          type="button"
+        ></button>
+        <h2 class="modal__heading">Edit Profile</h2>
+        <form class="modal__form" name="edit-profile-form">
           <input
-            type="text"
-            name="title"
-            class="modal__input"
+            class="modal__input modal__input-edit"
             id="profile-title-input"
+            type="text"
+            name="name"
             placeholder="Name"
+            required
             minlength="2"
             maxlength="40"
-            required
           />
-          <span class="modal__error" id="profile-title-input-error"></span>
+          <span class="modal__error" id="profile-title-input-error"
+            >Please fill out this field.</span
+          >
           <input
-            type="text"
-            name="description"
-            class="modal__input"
+            class="modal__input modal__input-edit"
             id="profile-description-input"
+            type="text"
+            name="about"
             placeholder="Description"
+            required
             minlength="2"
             maxlength="200"
-            required
           />
-          <span
-            class="modal__error"
-            id="profile-description-input-error"
-          ></span>
-          <button class="modal__button modal__button_disabled">Save</button>
+          <span class="modal__error" id="profile-description-input-error"
+            >Please fill out this field.</span
+          >
+          <button
+            class="modal__button modal__button_disabled"
+            type="submit"
+            disabled
+          >
+            Save
+          </button>
         </form>
       </div>
     </div>
 
-    <!-- Add Card Modal -->
-    <div class="modal" id="profile-add-card-modal">
+    <!-- Edit avatar modal  -->
+    <div class="modal" id="avatar-image-modal">
       <div class="modal__container">
-        <button class="modal__close" id="add-card-close-button"></button>
-        <p class="modal__heading">New Place</p>
-        <form class="modal__form" id="add-card-form">
+        <button
+          class="modal__close"
+          id="add-avatar-close-button"
+          type="button"
+        ></button>
+        <h3 class="modal__heading">Change profile picture</h3>
+        <form class="modal__form" name="edit-avatar-form">
           <input
-            type="text"
-            name="name"
-            id="card-name"
-            class="modal__input modal__input_type_title"
-            placeholder="Title"
-            minlength="1"
-            maxlength="30"
-            required
-          />
-          <span class="modal__error" id="card-name-error"></span>
-          <input
-            type="url"
-            id="card-link"
-            name="link"
-            class="modal__input modal__input_type_url"
+            class="modal__input modal__input-avatar"
+            id="avatar-input"
+            name="avatar"
+            type="URL"
             placeholder="Image URL"
             required
           />
-          <span class="modal__error" id="card-link-error"></span>
-          <button class="modal__button modal__button_disabled">Save</button>
+          <span class="modal__error" id="avatar-input-error"></span>
+          <button class="modal__button modal__button_disabled" type="submit">
+            Save
+          </button>
         </form>
       </div>
     </div>
 
-    <!-- Image Popup -->
-    <div class="modal" id="popup-modal">
-      <div class="modal__container modal__container_preview_popup">
-        <button class="modal__close" id="popup-image-close-button"></button>
-        <img class="modal__image modal__image_popup" src="#" alt="#" />
-        <p class="modal__name modal__name_popup"></p>
+    <!-- Add card modal -->
+    <div class="modal" id="add-card-modal">
+      <div class="modal__container">
+        <button
+          class="modal__close"
+          id="add-card-close-button"
+          type="button"
+        ></button>
+        <h4 class="modal__heading">New Place</h4>
+        <form class="modal__form" name="add-card-form">
+          <input
+            class="modal__input modal__input-new"
+            id="new-card-title-input"
+            type="text"
+            name="name"
+            placeholder="Title"
+            required
+            minlength="1"
+            maxlength="30"
+          />
+          <span class="modal__error" id="new-card-title-input-error"
+            >Please fill out this field.</span
+          >
+          <input
+            class="modal__input modal__input-new"
+            id="new-card-link-input"
+            type="URL"
+            name="link"
+            placeholder="Image Link"
+            required
+          />
+          <span class="modal__error" id="new-card-link-input-error"
+            >Please enter a web address.</span
+          >
+          <button
+            class="modal__button modal__button_disabled"
+            type="submit"
+            disabled
+          >
+            Create
+          </button>
+        </form>
       </div>
     </div>
 
-    <!-- Card Template -->
+    <!-- Delete card modal -->
+    <div class="modal" id="delete-card-modal">
+      <div class="modal__container">
+        <form class="modal__form" name="confirm-delete-form">
+          <h5 class="modal__heading">Are you sure?</h5>
+          <button class="modal__button" type="submit">Yes</button>
+        </form>
+        <button
+          class="modal__close"
+          id="delete-card-close-button"
+          type="button"
+        ></button>
+      </div>
+    </div>
+
+    <!-- Preview image modal -->
+    <div class="modal" id="image-modal">
+      <div class="modal__content-preview">
+        <button
+          class="modal__close modal__close-preview"
+          id="image-preview-modal-close-button"
+          type="button"
+        ></button>
+        <img
+          class="modal__preview-image"
+          id="image-preview-modal"
+          src="#"
+          alt="#"
+        />
+        <p class="modal__caption"></p>
+      </div>
+    </div>
+
+    <!-- Card templates -->
     <template id="card-template">
       <li class="card">
-        <div class="card__delete_button" type="button"></div>
-        <img src="#" alt="#" class="card__image" />
+        <img class="card__image" src="" alt="" />
+        <button class="card__delete-button" type="button"></button>
         <div class="card__description">
           <h2 class="card__title"></h2>
-          <button class="card__like_button" type="button"></button>
+          <button class="card__like-button" type="button"></button>
         </div>
       </li>
     </template>
