@@ -39,7 +39,7 @@ function renderCard(cardData) {
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "67f9ee29-81ba-42c1-865a-539d34535736",
+    authorization: "60774818-2b72-4a3b-8d83-5b2abf9c8a5e",
     "Content-Type": "application/json",
   },
 });
