@@ -1,14 +1,14 @@
-#Project 9 - Around the U.S.
+# Project 9 - Around the U.S.
 
-###Overview
+### Overview
 Project 9 adds more functionality to the site with API calls. From changing the page avatar, to editing, adding, and deleting profile cards using server requests.
 
-###Tools
-*HTML
-*CSS
-*Figma
-*Javascript
-*API
+### Tools
+* HTML
+* CSS
+* igma
+* avascript
+* PI
 
-###Project Link
+### Project Link
 https://phil-peraza.github.io/se_project_aroundtheus/
