@@ -1,13 +1,12 @@
-# Project 3: Around The U.S.
+###Overview
+Project 9 adds more functionality to the site with API calls. From changing the page avatar, to editing, adding, and deleting profile cards using server requests.
 
-### Overview  
-Project 3 is a responsive website design that scales depending on the screen resolution it is viewed from. Furthermore, website is made responsive using javascript adding popup, add/delete card, and zoom in image functionalities. 
+###Tools
+*HTML
+*CSS
+*Figma
+*Javascript
+*API
 
-### Tools
-* HTML
-* CSS
-* Figma
-* Javascript
-
-### Project Link
+###Project Link
 https://phil-peraza.github.io/se_project_aroundtheus/
