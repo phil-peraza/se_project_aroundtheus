@@ -51,7 +51,7 @@ api
     newUserInfo.setUserInfo({
       name: userData["name"],
       about: userData["about"],
-      id: userData["id"],
+      id: userData["_id"],
     });
     cardSection = new Section(
       {
