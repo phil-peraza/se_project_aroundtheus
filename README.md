@@ -6,9 +6,9 @@ Project 9 adds more functionality to the site with API calls. From changing the 
 ### Tools
 * HTML
 * CSS
-* igma
-* avascript
-* PI
+* Figma
+* Javascript
+* API
 
 ### Project Link
 https://phil-peraza.github.io/se_project_aroundtheus/
