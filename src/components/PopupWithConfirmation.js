@@ -10,7 +10,7 @@ export default class PopupWithConfirmation extends Popup {
 
   setLoading(isLoading) {
     if (isLoading) {
-      this._saveButton.textContent = "Saving...";
+      this._saveButton.textContent = "Deleting...";
     } else {
       this._saveButton.textContent = this._saveButtonText;
     }
