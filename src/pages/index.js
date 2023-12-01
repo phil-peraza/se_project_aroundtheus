@@ -121,7 +121,7 @@ function handleProfileEditSubmit(data) {
 profileEditOpenButton.addEventListener("click", () => {
   const data = newUserInfo.getUserInfo();
   profileTitleInput.value = data.name;
-  profileDescriptionInput.value = data.about;
+  profileDescriptionInput.value = data.description;
   editProfilePopup.open();
 });
 
