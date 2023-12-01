@@ -174,9 +174,7 @@ function handleLikeClick(item) {
       .then((res) => {
         item.updateLikeStatus(res.isLiked);
       })
-      .catch((err) => {
-        console.error(err);
-      });
+      .catch(console.error);
   }
 }
 
