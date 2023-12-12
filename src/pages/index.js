@@ -93,7 +93,7 @@ function handleAddCardSubmit(data) {
 }
 
 addCardOpenButton.addEventListener("click", () => {
-  formValidators["edit-profile-form"].resetValidation();
+  formValidators["add-card-form"].resetValidation();
   addCardPopup.open();
 });
 
